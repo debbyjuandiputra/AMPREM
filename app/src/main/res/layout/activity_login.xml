@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verifikasi Akses"
+        android:textColor="@color/text_dark"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="Masukkan 6 digit kode authenticator Anda"
+        android:textColor="@color/text_muted"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/boxContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/digit1"
+            style="@style/DigitBoxStyle" />
+
+        <EditText
+            android:id="@+id/digit2"
+            style="@style/DigitBoxStyle" />
+
+        <EditText
+            android:id="@+id/digit3"
+            style="@style/DigitBoxStyle" />
+
+        <EditText
+            android:id="@+id/digit4"
+            style="@style/DigitBoxStyle" />
+
+        <EditText
+            android:id="@+id/digit5"
+            style="@style/DigitBoxStyle" />
+
+        <EditText
+            android:id="@+id/digit6"
+            style="@style/DigitBoxStyle" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/errorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Kode salah, coba lagi."
+        android:textColor="#D32F2F"
+        android:textSize="13sp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button_primary_background"
+        android:text="Masuk"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>

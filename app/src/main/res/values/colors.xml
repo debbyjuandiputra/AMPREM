@@ -1,0 +1,11 @@
+<resources>
+    <color name="primary">#1A237E</color>
+    <color name="primary_dark">#0D1345</color>
+    <color name="accent">#00BFA5</color>
+    <color name="background">#F5F6FA</color>
+    <color name="box_stroke">#B0B7C3</color>
+    <color name="box_stroke_focused">#1A237E</color>
+    <color name="text_dark">#1B1F3B</color>
+    <color name="text_muted">#6B7080</color>
+    <color name="white">#FFFFFF</color>
+</resources>
