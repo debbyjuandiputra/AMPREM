@@ -16,7 +16,7 @@ import javax.crypto.spec.SecretKeySpec
  */
 object TotpUtil {
 
-    private const val SECRET_BASE32 = "AMPREM"
+    private const val SECRET_BASE32 = "ALIGHT MOTION PREMIUM BY YOR PEDIA"
     private const val TIME_STEP_SECONDS = 30L
     private const val CODE_DIGITS = 6
 
