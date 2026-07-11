@@ -1,11 +1,9 @@
-name: Tutor AM Prem by Yor
+name: Build APK
 
 on:
   push:
-    branches: [ "main" ]      # atau "master"
-  pull_request:
     branches: [ "main" ]
-  workflow_dispatch:          # biar bisa di-run manual
+  workflow_dispatch:
 
 jobs:
   build:
@@ -28,10 +26,22 @@ jobs:
       run: chmod +x gradlew
 
     - name: Build APK (Debug)
-      run: ./gradlew assembleDebug
+      run: ./gradlew assembleDebug --stacktrace --no-daemon
+
+    - name: Cek apakah APK berhasil dibuat
+      run: |
+        if [ -f "app/build/outputs/apk/debug/app-debug.apk" ]; then
+          echo "APK ditemukan!"
+          ls -la app/build/outputs/apk/debug/
+        else
+          echo "APK TIDAK DITEMUKAN!"
+          ls -la app/build/outputs/apk/ || echo "Folder apk tidak ada"
+          exit 1
+        fi
 
     - name: Upload APK sebagai artifact
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
-        path: app/build/outputs/apk/debug/app-debug.apk
+        path: app/build/outputs/apk/debug/*.apk
+        if-no-files-found: error  # <-- Ini akan bikin workflow gagal kalau APK gak ada
